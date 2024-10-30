@@ -115,6 +115,12 @@ resource vm 'Microsoft.Compute/virtualMachines@2022-03-01' = {
   location: location
   tags: resourceTags
   properties: {
+    licenseType: 'Windows_Server'
+    priority: 'Spot'
+    evictionPolicy: 'Deallocate'
+    billingProfile: {
+        maxPrice: -1
+    }
     hardwareProfile: {
       vmSize: 'Standard_E32s_v5'
     }
